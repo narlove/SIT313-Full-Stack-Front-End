@@ -1,0 +1,128 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+}
+
+.navbar {
+    padding: 20px;
+    background-color: darkslategrey;
+}
+
+.navbar a {
+    padding: 30px;
+    text-decoration: none;
+    color: aqua;
+}
+
+.background-img-container {
+    position: relative;
+    display: inline;
+}
+
+.background-img-container img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0, 75%);
+    color: #fff;
+    /* padding left-right seems to make the text overflow the width of the window and extend it so we just aint doin that*/
+    padding: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    opacity: 0%;
+    transition: opacity 0.3s ease-in-out,
+                    color 0.3s ease-in-out;
+}
+
+.background-img-container:hover .overlay-text {
+    /* used visibility before but because i want the transition i need to use opacity */
+    opacity: 100%;
+}
+
+.intro-statement {
+    position: relative;
+    display: block;
+    margin-top: 35px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.profile-image img {
+    position: relative;
+    display: block;
+    margin-top: 35px;
+    
+    width: 400px;
+    
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.centered-h2 {
+    position: relative;
+    display: block;
+    margin: 35px 0 35px 0;
+
+    text-align: center;
+
+    font-size: 28px;
+}
+
+.project {
+    position: relative;
+    display: block;
+
+    margin: 50px 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project img {
+    border-radius: 20%;
+    width: 400px;
+    height: 300px;
+}
+
+.project > * {
+    padding: 20px;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 16px;
+    padding: 10px;
+}
+
+.grid-container img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+} */
+
+.grid-container {
+  display: grid;
+  /* where all the magic happens - as many 300px columns as can fit, maxing out at 1 fraction (4 images so 1/4 each) */
+  grid-template-columns: repeat(auto-fit, 400px);
+  gap: 16px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.grid-container img {
+  width: 400px;
+  height: 300px;
+  display: block;
+}
